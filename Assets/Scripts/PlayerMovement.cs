@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     public float moveSpeed;
     public float jumpForce;
 
@@ -52,7 +53,13 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRB.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
+
     private void FixedUpdate()  //hahmon liikkuminen x-akselilla
     {
         transform.Translate(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
@@ -61,13 +68,14 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
             animator.SetBool("Walk", true);
+
         }
         else
         {
             animator.SetBool("Walk", false);
+
         }
     }
-
 
     void GroundDetect()
     {
@@ -103,10 +111,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
-
-
+        if (collision.gameObject.CompareTag("LevelEnd"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }             
     }
-
     
     public void Die()
     {

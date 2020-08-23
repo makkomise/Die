@@ -120,7 +120,7 @@ MonoBehaviour:
   speed: 2
   angrySpeed: 6
   angryDistance: 4
-  maxDistance: 10
+  maxDistance: 15
   animator: {fileID: 0}
 --- !u!50 &4690164250787005010
 Rigidbody2D:
