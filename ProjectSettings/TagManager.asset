@@ -12,6 +12,8 @@ TagManager:
   - Projectile
   - Helper
   - EnemySpawn1
+  - LevelEnd
+  - Respawn2
   layers:
   - Default
   - TransparentFX
