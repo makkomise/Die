@@ -17,7 +17,7 @@ public class Fly : MonoBehaviour
     }
 
 
-    void Update()
+    void Update()       //Kärpäsen lentofunktio, satunnaisgeneroitu lentely ympäriinsä
     {
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0)
@@ -27,7 +27,7 @@ public class Fly : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void FixedUpdate()  //kärbän lentonopeus
     {
         flyRB.AddForce(movement * maxSpeed);
     }

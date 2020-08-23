@@ -5,16 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class End : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))     //Pääsee takaisin main menuun esciä painamalla
         {
             SceneManager.LoadScene("MainMenu");
         }

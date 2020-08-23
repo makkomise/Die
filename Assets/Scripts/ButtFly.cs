@@ -17,9 +17,9 @@ public class ButtFly : MonoBehaviour
     }
 
 
-    void Update()
+    void Update()   //Perhosen lentelyjutut, randomgeneroituu
     {
-        timeLeft -= Time.deltaTime;
+        timeLeft -= Time.deltaTime;     
         if (timeLeft <= 0)
         {
             movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
@@ -32,7 +32,7 @@ public class ButtFly : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void FixedUpdate()  //Perhosen lentonopeusjuttu
     {
         flyRB.AddForce(movement * maxSpeed);
     }

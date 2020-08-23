@@ -25,9 +25,9 @@ public class PropelHat : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        if (Vector2.Distance(transform.position, target.position) < maxDistance)
+        if (Vector2.Distance(transform.position, target.position) < maxDistance)    //Lähtee perään jos pelaaja on tarpeeksi lähellä
         {
-            if (Vector2.Distance(transform.position, target.position) > angryDistance)
+            if (Vector2.Distance(transform.position, target.position) > angryDistance)  //Muuttuu vihaiseksi jos pelaaja on liian lähellä
             {
                 animator.SetBool("Angry", false);
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);

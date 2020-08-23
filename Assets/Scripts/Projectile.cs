@@ -18,7 +18,6 @@ public class Projectile : MonoBehaviour
         moveDirection = (target.transform.position - transform.position).normalized * projectileSpeed;
         projectileRB.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 1);
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

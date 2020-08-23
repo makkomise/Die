@@ -26,7 +26,7 @@ public class HornyDude : MonoBehaviour
         transform.localScale = new Vector3(direction, 1, 1);
     }
 
-    private void LateUpdate()
+    private void LateUpdate()   //Liikkumisen funktio, vaihtaa suuntaa jos DetectionPoint osuu johonkin
     {
         RaycastHit2D hit = Physics2D.Raycast(detectionPoint.transform.position, Vector2.down, 1, groundLayer);
 
@@ -42,7 +42,7 @@ public class HornyDude : MonoBehaviour
             direction *= -1;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //Muuttaa suuntaa jos törmää toiseen vihuun
     {
         direction *= -1;
     }

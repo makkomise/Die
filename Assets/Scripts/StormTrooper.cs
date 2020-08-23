@@ -32,7 +32,7 @@ public class StormTrooper : MonoBehaviour
         Fire();
     }
 
-    private void LateUpdate()
+    private void LateUpdate()   //Liikkumisen funktio, vaihtaa suuntaa jos DetectionPoint osuu johonkin
     {
         RaycastHit2D hit = Physics2D.Raycast(detectionPoint.transform.position, Vector2.down, 1, groundLayer);
 
@@ -48,12 +48,13 @@ public class StormTrooper : MonoBehaviour
             direction *= -1;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)     //Vaihtaa suuntaa osuessaan kaveriin
     {
         direction *= -1;
     }
 
-    void Fire()
+    void Fire()     //Stormtrooperin ampuminen
     {
         if (Time.time > nextFire)
         {
